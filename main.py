@@ -142,8 +142,8 @@ class Config:
     # ── MARTINGALE STAKE SIZING ───────────────────────────────────────────────
 
     base_stake:      float = 0.35   # step 0
-    martingale_mult: float = 1.28   # multiply on each loss
-    martingale_max:  int   = 3      # maximum steps before reset
+    martingale_mult: float = 1.15   # multiply on each loss
+    martingale_max:  int   = 2      # maximum steps before reset
     min_stake:       float = 0.35
     max_stake:       float = 5.00
     max_balance_pct: float = 0.05
