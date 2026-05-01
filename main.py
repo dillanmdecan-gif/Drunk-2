@@ -95,7 +95,7 @@ class Config:
     api_url: str = "wss://ws.binaryws.com/websockets/v3"
 
     # Contract
-    symbol:   str = "1HZ25V"
+    symbol:   str = "R_10"
     duration: int = 1          # 1 tick — optimal for digit contracts
     currency: str = "USD"
 
