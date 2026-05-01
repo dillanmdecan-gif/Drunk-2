@@ -104,12 +104,12 @@ class Config:
     # Minimum observations per cell before the Markov signal is trusted
     # LOG ANALYSIS: cells fill to ~5 obs in the first 50 ticks; 10 was blocking
     # all signals until too late when the matrix had already converged to ~0.50
-    markov_min_obs:  int   = 7
+    markov_min_obs:  int   = 5
     # P(even | last_digit) must exceed this to fire a long-even signal
     # LOG ANALYSIS: 1HZ25V Markov matrix converges to 0.49–0.51 for all digits;
     # 0.54 was permanently unreachable after tick ~150. Lowered to 0.51 to trade
     # on real (small) structural deviations rather than requiring casino-level edge.
-    markov_thresh:   float = 0.52
+    markov_thresh:   float = 0.51
 
     # ── Z-SCORE PARAMETERS ───────────────────────────────────────────────────
 
@@ -121,7 +121,7 @@ class Config:
     # LOG ANALYSIS: even_rate fluctuates in a tight band (0.46–0.58); the
     # baseline std over 20-tick chunks is small so |Z| rarely exceeds 1.5.
     # Lowered to 0.8 to capture genuine short-window deviations from baseline.
-    z_thresh:        float = 0.9
+    z_thresh:        float = 0.8
 
     # ── SIGNAL COMBINATION ───────────────────────────────────────────────────
 
@@ -142,8 +142,8 @@ class Config:
     # ── MARTINGALE STAKE SIZING ───────────────────────────────────────────────
 
     base_stake:      float = 0.35   # step 0
-    martingale_mult: float = 1.28   # multiply on each loss
-    martingale_max:  int   = 3      # maximum steps before reset
+    martingale_mult: float = 1.15   # multiply on each loss
+    martingale_max:  int   = 2      # maximum steps before reset
     min_stake:       float = 0.35
     max_stake:       float = 5.00
     max_balance_pct: float = 0.05
